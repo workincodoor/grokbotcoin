@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>$GrokBot</title><link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet"><style>
+:root{--n:#39ff88;--p:#b44cff;--bg:#05030f}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg) url(bg.jpg) center/cover fixed;color:#e8e8ff;font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:-1}
+nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(5,3,15,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(57,255,136,.2)}
+nav .b{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.3rem}nav img{width:38px;height:38px;border-radius:50%;box-shadow:0 0 12px var(--n)}
+nav .l a{color:#ccc;text-decoration:none;margin-left:22px;font-weight:600}nav .l a:hover{color:var(--n)}
+.btn{display:inline-block;padding:14px 30px;border-radius:999px;font-weight:800;text-decoration:none;font-size:1.05rem;transition:.2s}
+.g{background:var(--n);color:#05030f;box-shadow:0 0 25px var(--n)}.g:hover{transform:scale(1.06);box-shadow:0 0 45px var(--n)}
+.o{border:2px solid var(--p);color:#fff;box-shadow:0 0 18px rgba(180,76,255,.5)}.o:hover{background:var(--p)}
+.hero{min-height:0;padding:90px 6% 70px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 6%;position:relative}
+.hero img{width:180px;height:180px;border-radius:50%;box-shadow:0 0 60px var(--n),0 0 120px var(--p);animation:fl 4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-16px)}}
+h1{font-size:clamp(3rem,11vw,7.5rem);font-weight:900;margin:24px 0 8px;background:linear-gradient(90deg,var(--n),#fff,var(--p));-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 20px rgba(57,255,136,.5))}
+.tag{font-size:clamp(1.3rem,4vw,2.2rem);font-weight:800;max-width:800px}.tag span{color:var(--n);text-shadow:0 0 14px var(--n)}
+.sub{color:#aab;margin:12px 0 30px;font-size:1.1rem}.cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.ca{margin-top:30px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(57,255,136,.4);border-radius:14px;padding:10px 14px;max-width:100%}
+.ca code{font-size:.9rem;word-break:break-all;color:var(--n)}.ca button{background:var(--p);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.rocket{position:absolute;font-size:3rem;animation:rk 9s linear infinite;left:-10%;bottom:10%}
+@keyframes rk{0%{transform:translate(0,0) rotate(45deg)}100%{transform:translate(130vw,-90vh) rotate(45deg)}}
+.marq{overflow:hidden;background:var(--n);color:#05030f;font-weight:900;padding:12px 0;transform:rotate(-1.5deg);margin:20px -10px}
+.marq div{white-space:nowrap;animation:mq 22s linear infinite;display:inline-block}@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:90px 6%;max-width:1150px;margin:auto}h2{font-size:clamp(2rem,6vw,3.4rem);font-weight:900;text-align:center;margin-bottom:40px}h2 span{color:var(--n);text-shadow:0 0 18px var(--n)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:linear-gradient(160deg,rgba(180,76,255,.13),rgba(57,255,136,.05));border:1px solid rgba(180,76,255,.4);border-radius:20px;padding:28px;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 0 30px rgba(57,255,136,.35);border-color:var(--n)}
+.card .n{font-size:2.4rem;font-weight:900;color:var(--n)}.card h3{margin:8px 0;font-size:1.3rem}.card p{color:#bbc;line-height:1.55}
+.note{text-align:center;color:#99a;margin-top:26px;font-size:.95rem}
+.com{text-align:center}.com p{color:#bbc;font-size:1.15rem;margin-bottom:28px;line-height:1.6}
+footer{border-top:1px solid rgba(255,255,255,.1);padding:40px 6%;text-align:center;color:#889;font-size:.85rem;line-height:1.7}
+.rv{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+@media(max-width:640px){nav .l{display:none}.hero img{width:130px;height:130px}section{padding:60px 5%}.ca code{font-size:.72rem}}
+
+h1,h2,.card .n,nav .b{font-family:Unbounded,sans-serif}
+.hero{flex-direction:row;gap:50px;text-align:left;max-width:1250px;margin:auto}
+.hero .txt{flex:1;display:flex;flex-direction:column;align-items:flex-start}
+.hero .art{flex:1 1 480px;min-width:0;position:relative}.hero .art img.big{width:100%;height:auto;border-radius:32px;box-shadow:0 0 80px rgba(180,76,255,.45),0 0 0 1px rgba(57,255,136,.3);animation:fl 5s ease-in-out infinite}
+.hero .art:before{content:"";position:absolute;inset:10%;background:radial-gradient(var(--n),transparent 70%);filter:blur(60px);opacity:.35;z-index:-1}
+.hero img.lg{width:64px;height:64px;animation:none;box-shadow:0 0 20px var(--n)}
+.pill{display:inline-block;padding:6px 14px;border-radius:999px;border:1px solid rgba(57,255,136,.5);background:rgba(57,255,136,.08);color:var(--n);font-weight:600;font-size:.85rem;margin-top:16px}
+h1{margin:14px 0 10px;font-size:clamp(2.8rem,7vw,5.6rem)}.tag{max-width:560px}
+.card{backdrop-filter:blur(14px);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02))}
+.rw{display:flex;gap:40px;align-items:center}.rw .grid{flex:1.4;grid-template-columns:1fr}.rw img{flex:1;width:100%;max-width:440px;border-radius:30px;box-shadow:0 0 70px rgba(57,255,136,.35)}
+.card{display:flex;gap:18px;align-items:flex-start}.card .n{min-width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;background:linear-gradient(135deg,var(--n),var(--p));color:#05030f}
+#buy .grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}#buy .card{flex-direction:column}
+@media(max-width:860px){.hero,.rw{flex-direction:column;text-align:center}.hero .txt{align-items:center}.hero{padding-top:30px}.rw img{max-width:320px}.card{text-align:left}}
+.rw .card{display:grid;grid-template-columns:64px 1fr;column-gap:18px}.rw .card .n{grid-row:span 2}.rw .card h3{margin:4px 0}</style></head><body>
+<canvas id="stars"></canvas>
+<nav><div class="b"><img src="logo.png" alt="">$GrokBot</div><div class="l"><a href="#rewards">Rewards</a><a href="#buy">How to buy</a><a href="#community">Community</a></div><a class="btn g" style="padding:9px 20px;font-size:.9rem" href="#">Buy</a></nav>
+<div class="hero"><div class="txt"><img class="lg" src="logo.png" alt="$GrokBot logo"><span class="pill">● Live on Robinhood Chain</span>
+<h1>$GrokBot</h1>
+<p class="tag">Hold $GrokBot, earn <span>tokenized SpaceX stock</span></p>
+<p class="sub">A community memecoin on Robinhood Chain</p>
+<div class="cta"><a class="btn g" href="#">Buy $GrokBot</a><a class="btn o" href="https://www.geckoterminal.com/robinhood/pools/0xcfd4a127530612f9d224f5426fba23ebce015abf" target="_blank" rel="noopener">Chart</a></div>
+<div class="ca"><code id="ca">0x1aa1776d80b1a8585036ddb0d918b93d84531edb</code><button onclick="navigator.clipboard.writeText(document.getElementById('ca').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy CA',1500)">Copy CA</button></div>
+</div><div class="art"><img class="big" src="hero.jpg" alt="GrokBot mascot riding a rocket"></div></div>
+<div class="marq"><div>🚀 $GROKBOT ✦ ROBINHOOD CHAIN ✦ HOLD &amp; EARN TOKENIZED SPACEX STOCK ✦ COMMUNITY MEMECOIN ✦ 🚀 $GROKBOT ✦ ROBINHOOD CHAIN ✦ HOLD &amp; EARN TOKENIZED SPACEX STOCK ✦ COMMUNITY MEMECOIN ✦&nbsp;</div></div>
+<section id="rewards"><h2 class="rv">How <span>rewards</span> work</h2><div class="rw"><img class="rv" src="coin.jpg" alt="GrokBot mascot holding a reward coin"><div class="grid">
+<div class="card rv"><div class="n">01</div><h3>Trades create fees</h3><p>Every $GrokBot trade generates fees.</p></div>
+<div class="card rv"><div class="n">02</div><h3>Paid to holders</h3><p>Fees are paid out to holders in tokenized SpaceX stock.</p></div>
+<div class="card rv"><div class="n">03</div><h3>Amounts vary</h3><p>Payouts depend on trading activity. Amounts vary and are not guaranteed.</p></div>
+</div></div></section>
+<section id="buy"><h2 class="rv">How to <span>buy</span></h2><div class="grid">
+<div class="card rv"><div class="n">1</div><h3>Get a wallet</h3><p>Set up a wallet that supports Robinhood Chain.</p></div>
+<div class="card rv"><div class="n">2</div><h3>Get funds</h3><p>Add funds to your wallet on Robinhood Chain.</p></div>
+<div class="card rv"><div class="n">3</div><h3>Swap</h3><p>Swap for $GrokBot using the contract address above. Always double-check the CA.</p></div>
+</div></section>
+<section id="community" class="com"><h2 class="rv">Join the <span>community</span></h2><p class="rv">$GrokBot is run by its holders. No team promises, just people who like the meme and want to see where it goes.</p>
+<div class="cta rv"><a class="btn g" href="#">Buy $GrokBot</a><a class="btn o" href="https://www.geckoterminal.com/robinhood/pools/0xcfd4a127530612f9d224f5426fba23ebce015abf" target="_blank" rel="noopener">View chart</a></div></section>
+<footer>$GrokBot is a community memecoin. It is not affiliated with or endorsed by SpaceX, xAI or Robinhood.<br>Nothing here is financial advice. Rewards are not guaranteed. Crypto is risky, only use money you can afford to lose.</footer>
+<script>
+const c=document.getElementById('stars'),x=c.getContext('2d');let s=[];
+function r(){c.width=innerWidth;c.height=innerHeight;s=Array.from({length:220},()=>({x:Math.random()*c.width,y:Math.random()*c.height,z:Math.random()*1.5+.3}))}
+r();addEventListener('resize',r);
+(function f(){x.clearRect(0,0,c.width,c.height);for(const t of s){t.y+=t.z*.4;if(t.y>c.height)t.y=0;x.fillStyle=`rgba(255,255,255,${t.z/1.8})`;x.fillRect(t.x,t.y,t.z,t.z)}requestAnimationFrame(f)})();
+const io=new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add('on')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script></body></html>
